@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_base_bases",
+  "info": {
+    "displayName": "Base",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "vgPgRatio": {
+      "type": "string"
+    },
+    "weightInMg": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

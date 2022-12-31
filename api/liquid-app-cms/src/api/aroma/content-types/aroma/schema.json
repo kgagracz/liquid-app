@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aromas",
+  "info": {
+    "singularName": "aroma",
+    "pluralName": "aromas",
+    "displayName": "Aroma"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "flavor": {
+      "type": "string",
+      "required": true
+    },
+    "producent": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

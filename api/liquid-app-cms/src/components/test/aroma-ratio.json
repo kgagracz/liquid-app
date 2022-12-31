@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_test_aroma_ratios",
+  "info": {
+    "displayName": "Aroma ratio",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "aroma": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::aroma.aroma"
+    },
+    "weightInMg": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}
