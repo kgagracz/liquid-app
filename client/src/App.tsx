@@ -1,14 +1,11 @@
 import React from 'react'
-import Archive from './pages/Archive';
-import Reserve from './pages/Reserve';
-import Home from './pages/Home';
+import {RouterProvider} from 'react-router-dom'
+import { router } from './routes';
 
 function App() {
   return (
     <div className="App">
-      <Home/>
-      <Archive/>
-      <Reserve/>
+      <RouterProvider router={router}/>
     </div>
   );
 }
