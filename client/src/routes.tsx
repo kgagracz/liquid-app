@@ -16,4 +16,4 @@ export const router = createBrowserRouter([
         path: '/zarezerwuj',
         element: <Reserve />
     },
-])
+]) 
