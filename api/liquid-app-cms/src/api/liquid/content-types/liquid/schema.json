@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "liquids",
+  "info": {
+    "singularName": "liquid",
+    "pluralName": "liquids",
+    "displayName": "Liquid",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true,
+      "minLength": 10
+    },
+    "themeColor": {
+      "type": "string",
+      "required": false
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "aromasAndRatios": {
+      "type": "component",
+      "repeatable": true,
+      "component": "test.aroma-ratio"
+    },
+    "base": {
+      "type": "component",
+      "repeatable": false,
+      "component": "base.base"
+    },
+    "sizeInMl": {
+      "type": "integer",
+      "required": true,
+      "default": 60
+    }
+  }
+}
