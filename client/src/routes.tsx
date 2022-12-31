@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
         element: <Archive />
     },
     {
-        path: '/zarezerwuj',
+        path: '/zarezerwuj', 
         element: <Reserve />
     },
 ]) 
