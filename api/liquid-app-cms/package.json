@@ -1,0 +1,30 @@
+{
+  "name": "liquid-app-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.5.5",
+    "@strapi/plugin-users-permissions": "4.5.5",
+    "@strapi/strapi": "4.5.5",
+    "better-sqlite3": "7.4.6",
+    "yarn": "^1.22.19"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "1e1a5ac1-725d-4b19-9627-18c3d441c4b0"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
