@@ -1,0 +1,11 @@
+@import '../styles/variables';
+
+.app {
+    display: flex;
+    .page-content {
+        background-color: $lightBackground;
+        padding: 100px;
+        flex-basis: 100%;
+        overflow-y: auto;
+    }
+}

@@ -1,11 +1,15 @@
-import React from 'react'
-import {RouterProvider} from 'react-router-dom'
-import { router } from './routes';
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import Layout from "./Layout/Layout";
+import { router } from "./routes";
+import "./styles/index.scss";
 
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router}/>
+      <Layout>
+        <RouterProvider router={router} />
+      </Layout>
     </div>
   );
 }

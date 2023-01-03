@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.button {
+    padding: 13px 55px;
+    font-size: 20px;
+    background-color: $actionBackground;
+    color: $lightText;
+    border: none;
+    border-radius: 20px;
+    // font-family: 'Baloo Tammudu 2', cursive;
+    line-height: 30px;
+    cursor: pointer;
+}
