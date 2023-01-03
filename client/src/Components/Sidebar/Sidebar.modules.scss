@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.sidebar {
+    width: 300px;
+    min-height: 100vh;
+    height: auto;
+    background-color: $mainBackground;
+    color: $text;
+    padding: 55px;
+    color: $lightText;
+    .logo {
+        margin-bottom: 30px;
+    }
+    .nav {
+        list-style-type: none;
+        &-item {
+            cursor: pointer;
+            a {
+                color: $lightText;
+            }
+        }
+    }
+}

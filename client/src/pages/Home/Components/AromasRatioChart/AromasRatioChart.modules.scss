@@ -1,0 +1,10 @@
+@import '../../../../styles/variables';
+
+.aromas-chart {
+    width: 200px;
+    height: 200px;
+    background: $mainBackground;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 24px;
+}

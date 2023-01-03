@@ -1,14 +1,15 @@
-import React from 'react'
-import Archive from './pages/Archive';
-import Reserve from './pages/Reserve';
-import Home from './pages/Home';
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import Layout from "./Layout/Layout";
+import { router } from "./routes";
+import "./styles/index.scss";
 
 function App() {
   return (
     <div className="App">
-      <Home/>
-      <Archive/>
-      <Reserve/>
+      <Layout>
+        <RouterProvider router={router} />
+      </Layout>
     </div>
   );
 }

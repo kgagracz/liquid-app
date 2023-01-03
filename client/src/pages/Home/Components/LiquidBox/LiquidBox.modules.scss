@@ -1,0 +1,43 @@
+@import '../../../../styles/variables';
+
+.liquid-box { 
+    padding: 48px;
+    border: 2px solid $primaryBorder;
+    border-radius: 20px;
+    background: $cardBackground;
+    display: flex;
+    max-width: 810px;
+    box-shadow: 4px 7px 30px rgba(0, 0, 0, 0.15);
+    &__column {
+        flex-basis: 50%;
+    }
+    &__head {
+        padding: 10px;
+        padding-bottom: 0;
+        margin-bottom: 30px;
+        &--title::first-letter {
+            text-transform: uppercase;
+        }
+        &__details {
+            display: flex;
+            list-style-type: none;
+            gap: 10px
+        }
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &--price {
+            font-size: 24px;
+            font-weight: 700;
+            color: $text;
+        }
+    }
+    &__description {
+        color: $text;
+        text-align: center;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

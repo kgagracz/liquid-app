@@ -44,6 +44,10 @@
       "type": "integer",
       "required": true,
       "default": 60
+    },
+    "nicotineStrength": {
+      "type": "decimal",
+      "required": true
     }
   }
 }
