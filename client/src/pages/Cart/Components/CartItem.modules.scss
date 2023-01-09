@@ -1,0 +1,22 @@
+@import '../../../styles/_variables.scss';
+
+.cart-item {
+    background-color: $itemBackground;
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 590px;
+    .column {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    p {
+        font-size: 20px;
+    }
+    .cart-item__delete-icon {
+        cursor: pointer;
+    }
+}

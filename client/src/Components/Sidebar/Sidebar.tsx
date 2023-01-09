@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { routes } from "../../routes";
 import "./Sidebar.modules.scss";
 
@@ -10,7 +11,7 @@ const Sidebar: React.FC = () => (
     <ul className="nav">
       {routes.map((route) => (
         <li className="nav-item" key={route.name}>
-          <a href={route.path}>{route.name}</a>
+          <Link to={route.path}>{route.name}</Link>
         </li>
       ))}
     </ul>

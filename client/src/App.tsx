@@ -1,15 +1,23 @@
-import React from "react";
-import { RouterProvider } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CartProvider from "./Context/Cart.context";
 import Layout from "./Layout/Layout";
-import { router } from "./routes";
+import { routes } from "./routes";
 import "./styles/index.scss";
 
 function App() {
   return (
     <div className="App">
-      <Layout>
-        <RouterProvider router={router} />
-      </Layout>
+      <Router>
+        <CartProvider>
+          <Layout>
+            <Routes>
+              {routes.map((route) => (
+                <Route path={route.path} element={route.element}></Route>
+              ))}
+            </Routes>
+          </Layout>
+        </CartProvider>
+      </Router>
     </div>
   );
 }

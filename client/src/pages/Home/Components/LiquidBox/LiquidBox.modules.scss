@@ -6,8 +6,9 @@
     border-radius: 20px;
     background: $cardBackground;
     display: flex;
-    max-width: 810px;
+    width: 810px;
     box-shadow: 4px 7px 30px rgba(0, 0, 0, 0.15);
+    margin: auto;
     &__column {
         flex-basis: 50%;
     }

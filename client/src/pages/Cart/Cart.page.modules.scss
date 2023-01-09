@@ -1,0 +1,47 @@
+@import '../../styles/variables'; 
+.cart {
+    .text-info-block {
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: block;
+        }
+        p {
+            text-align: center;
+        }
+    }
+    &__module {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        h2 {
+            display: block;
+            width: 100%;
+        }
+        &__items {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        &__summary {
+            background-color: $itemBackground;
+            border-radius: 30px;
+            padding: 30px;
+            font-size: 20px;
+            font-weight: 500;
+            &--price {
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 385px;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+}

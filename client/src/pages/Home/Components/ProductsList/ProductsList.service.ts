@@ -3,18 +3,20 @@ import qs from "qs";
 import { IStrapiResponse } from "../../../../Models/Strapi.models";
 import { ILiquid } from "../../../../Models/Liquid.models";
 
-const liquidsQuery = qs.stringify({
-  populate: {
-    aromasAndRatios: {
-      populate: {
-        aroma: { populate: "*" },
-      },
+export const fetchLiquids = async (archived: boolean = false) => {
+  const liquidsQuery = qs.stringify({
+    filters: {
+      active: !archived,
     },
-    base: { populate: "*" },
-  },
-});
-
-export const fetchLiquids = async () => {
+    populate: {
+      aromasAndRatios: {
+        populate: {
+          aroma: { populate: "*" },
+        },
+      },
+      base: { populate: "*" },
+    },
+  });
   const res = await fetch(`${API_ADDRESS}/liquids?${liquidsQuery}`, {
     headers: {
       "Content-type": "application/json",

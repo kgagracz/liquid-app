@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../../../Components/Button";
+import { CartContext, ICartContext } from "../../../../Context/Cart.context";
 import { ILiquid } from "../../../../Models/Liquid.models";
 import AromasRatioChart from "../AromasRatioChart";
 import "./LiquidBox.modules.scss";
 import { createLiquidName } from "./LiquidBox.service";
+import { useContext } from "react";
 
 export interface ILiquidBoxProps {
   liquid: ILiquid;
@@ -12,7 +14,7 @@ export interface ILiquidBoxProps {
 const LiquidBox: React.FC<ILiquidBoxProps> = ({ liquid }) => {
   const { nicotineStrength, sizeInMl, base, price, description } =
     liquid.attributes;
-  const navigate = useNavigate();
+  const { addToCart } = useContext<ICartContext>(CartContext);
 
   return (
     <div className="liquid-box">
@@ -36,7 +38,7 @@ const LiquidBox: React.FC<ILiquidBoxProps> = ({ liquid }) => {
         </div>
         <div className="liquid-box__info">
           <p className="liquid-box__info--price">{price} zł</p>
-          <Button text="Zarezerwuj" onClick={() => navigate("/zarezerwuj")} />
+          <Button text="Zarezerwuj" onClick={() => addToCart(liquid)} />
         </div>
       </div>
       <div className="liquid-box__column">

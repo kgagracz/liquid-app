@@ -1,4 +1,10 @@
-import React from 'react'
+import React from "react";
+import ProductsList from "../Home/Components/ProductsList";
 
-const ArchivePage: React.FC = () => <p>Archiwum</p>
-export default ArchivePage
+const ArchivePage: React.FC = () => (
+  <div>
+    <h1>Kiedyś dostępne</h1>
+    <ProductsList archived />
+  </div>
+);
+export default ArchivePage;
