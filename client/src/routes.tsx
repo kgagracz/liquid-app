@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Archive from "./pages/Archive";
+import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Reserve from "./pages/Reserve";
 
@@ -18,6 +19,11 @@ export const routes = [
     path: "/zarezerwuj",
     element: <Reserve />,
     name: "Zamów liquid",
+  },
+  {
+    path: "/koszyk",
+    element: <Cart />,
+    name: "Koszyk",
   },
 ];
 
