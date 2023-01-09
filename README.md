@@ -6,4 +6,4 @@ Admin can add liquid with details such as aromas ratio, nicotine strength, base 
 created with available aromas or random pick aromas.
 
 ## motivation
-The idea of project was born in times when I was mixing my own vape liquids and selling them to myu friends. They have been always asking about aromas - ratio or availability.
+The idea of project was born in times when I was mixing my own vape liquids and selling them to my friends. They have been always asking about aromas - ratio or availability.
