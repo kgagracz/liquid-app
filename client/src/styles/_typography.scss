@@ -35,3 +35,8 @@ h2 {
 hr {
     border-top: 1px solid $separator;
 }
+
+.strikethrough {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+}

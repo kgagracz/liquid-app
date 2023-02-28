@@ -1,0 +1,15 @@
+@import '../../../../styles/variables';
+
+.aromas-list {
+    padding: 40px;
+    max-width: 812px;
+    &__head {
+
+    }
+
+    &__aromas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 110px;
+    }
+}

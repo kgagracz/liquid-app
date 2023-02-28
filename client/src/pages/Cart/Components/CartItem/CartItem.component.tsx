@@ -1,9 +1,9 @@
-import { CartContext, ICartContext } from "../../../Context/Cart.context";
-import { createLiquidName } from "../../Home/Components/LiquidBox/LiquidBox.service";
-import { ICartItemProps } from "./CartItem.models";
+import { CartContext, ICartContext } from "../../../../Context/Cart.context";
+import { createLiquidName } from "../../../Home/Components/LiquidBox/LiquidBox.service";
 import "./CartItem.modules.scss";
 import { useContext } from "react";
-import { ReactComponent as TrashBinIcon } from "../../../Icons/trash_bin.svg";
+import { ReactComponent as TrashBinIcon } from "../../../../Icons/trash_bin.svg";
+import { ICartItemProps } from "./CartItem.models";
 
 const CartItem: React.FC<ICartItemProps> = ({ liquid }) => {
   const { removeFromCart } = useContext<ICartContext>(CartContext);

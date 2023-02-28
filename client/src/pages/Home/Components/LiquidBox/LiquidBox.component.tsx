@@ -42,7 +42,7 @@ const LiquidBox: React.FC<ILiquidBoxProps> = ({ liquid }) => {
         </div>
       </div>
       <div className="liquid-box__column">
-        <AromasRatioChart />
+        <AromasRatioChart aromasAndRatios={liquid.attributes.aromasAndRatios} />
         <p className="liquid-box__description">{description}</p>
       </div>
     </div>

@@ -1,0 +1,17 @@
+@import '../../../../styles/variables';
+.empty-cart {
+    border-radius: 50px;
+    background-color: $itemBackground;
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 100px 30px 100px;
+    & > * {
+        width: 100%;
+        text-align: center;
+    }
+    & button {
+        width: auto
+    }
+}
