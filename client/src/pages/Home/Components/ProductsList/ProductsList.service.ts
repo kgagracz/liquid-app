@@ -23,5 +23,6 @@ export const fetchLiquids = async (archived: boolean = false) => {
     },
   });
   const data: IStrapiResponse<ILiquid> = await res.json();
+
   return data.data;
 };

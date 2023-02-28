@@ -1,0 +1,10 @@
+@import '../../../../styles/variables';
+
+.aroma {
+    border-radius: 20px;
+    border: 3px solid $primaryBorder;
+    padding: 15px;
+    background-color: $itemBackground;
+    width: 150px;
+    height: 150px;
+}
