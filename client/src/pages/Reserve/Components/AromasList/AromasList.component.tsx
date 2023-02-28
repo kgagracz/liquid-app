@@ -8,9 +8,8 @@ import AromaListItem from "./Component/AromaListItem";
 const AromasList = () => {
   const [aromas, setAromas] = useState<IAromaAndRatio[]>([]);
   const [filteredAromas, setFilteredAromas] = useState<IAromaAndRatio[]>([]);
-  const { selectedAromas, addAroma, removeAroma } = useContext(
-    SelectedAromasContext
-  );
+  const { selectedAromas, addAroma, removeAroma, isInSelectedAromas } =
+    useContext(SelectedAromasContext);
 
   useEffect(() => {
     (async () => {
@@ -44,7 +43,11 @@ const AromasList = () => {
       </div>
       <div className="aromas-list__aromas">
         {filteredAromas.map((aroma) => (
-          <AromaListItem aroma={aroma} addAroma={addAroma} />
+          <AromaListItem
+            aroma={aroma}
+            addAroma={addAroma}
+            isSelected={isInSelectedAromas(aroma.id)}
+          />
         ))}
       </div>
     </div>

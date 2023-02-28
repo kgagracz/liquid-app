@@ -1,13 +1,19 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .button {
-    padding: 13px 55px;
-    font-size: 20px;
-    background-color: $actionBackground;
-    color: $lightText;
-    border: none;
-    border-radius: 20px;
-    // font-family: 'Baloo Tammudu 2', cursive;
-    line-height: 30px;
-    cursor: pointer;
+  padding: 13px 55px;
+  font-size: 20px;
+  background-color: $actionBackground;
+  color: $lightText;
+  border: none;
+  border-radius: 20px;
+  // font-family: 'Baloo Tammudu 2', cursive;
+  line-height: 30px;
+  cursor: pointer;
+
+  &.active {
+    background: transparent;
+    border: 2px solid $primaryBorder;
+    color: $text;
+  }
 }

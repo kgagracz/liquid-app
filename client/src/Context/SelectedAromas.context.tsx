@@ -5,12 +5,14 @@ export interface ISelectedAromasContext {
   selectedAromas: IAromaAndRatio[];
   addAroma: (product: IAromaAndRatio) => void;
   removeAroma: (productId: IAromaAndRatio["id"]) => void;
+  isInSelectedAromas: (aromaId: IAromaAndRatio["id"]) => boolean;
 }
 
 export const SelectedAromasContext = createContext<ISelectedAromasContext>({
   selectedAromas: [],
   addAroma: () => null,
   removeAroma: () => null,
+  isInSelectedAromas: () => false,
 });
 
 const SelectedAromasProvider: React.FC<{ children: ReactNode }> = ({
@@ -23,16 +25,16 @@ const SelectedAromasProvider: React.FC<{ children: ReactNode }> = ({
 
   const addAroma = (aroma: IAromaAndRatio) => {
     !isInSelectedAromas(aroma.id) &&
+      selectedAromas.length < 3 &&
       setSelectedAromas((prev) => [...prev, aroma]);
   };
 
-  const removeAroma = (aromaId: IAromaAndRatio["id"]) => {
+  const removeAroma = (aromaId: IAromaAndRatio["id"]) =>
     setSelectedAromas((prev) => prev.filter((aroma) => aroma.id !== aromaId));
-  };
 
   return (
     <SelectedAromasContext.Provider
-      value={{ selectedAromas, addAroma, removeAroma }}
+      value={{ selectedAromas, addAroma, removeAroma, isInSelectedAromas }}
     >
       {children}
     </SelectedAromasContext.Provider>

@@ -8,15 +8,18 @@ interface ISelectedAromasListProps {}
 
 const SelectedAromasList = () => {
   const { selectedAromas } = useContext(SelectedAromasContext);
-  console.log(selectedAromas);
+
   return (
-    <div className="selected-aromas-list">
-      {selectedAromas.map((aroma) => (
-        <Aroma
-          flavour={aroma.attributes.flavour}
-          producent={aroma.attributes.producent}
-        />
-      ))}
+    <div className="selected-aromas">
+      <div className="selected-aromas__list">
+        {selectedAromas.map((aroma) => (
+          <Aroma
+            id={aroma.id}
+            flavour={aroma.attributes.flavour}
+            producent={aroma.attributes.producent}
+          />
+        ))}
+      </div>
       <Button text="Wylosuj aromat" onClick={() => console.log("losuj")} />
     </div>
   );

@@ -7,4 +7,14 @@
     background-color: $itemBackground;
     width: 150px;
     height: 150px;
+    position: relative;
+
+    &__close-icon {
+        position: absolute;
+        top: 17px;
+        right: 17px;
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+    }
 }
