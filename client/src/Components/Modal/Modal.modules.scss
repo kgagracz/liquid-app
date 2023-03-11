@@ -1,0 +1,33 @@
+.modal-overlay {
+  background: #000;
+  opacity: 0.7;
+  position: absolute;
+  z-index: 30;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-content {
+  z-index: 31;
+  background: #fff;
+  border-radius: 30px;
+  position: absolute;
+  left: 25%;
+  top: 60px;
+  max-height: 80vh;
+  overflow-y: scroll;
+
+  .modal-head {
+    position: relative;
+
+    &__close-icon {
+      position: absolute;
+      right: 33px;
+      top: 33px;
+      z-index: 3;
+      cursor: pointer;
+    }
+  }
+}

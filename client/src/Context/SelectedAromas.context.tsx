@@ -1,25 +1,35 @@
-import { createContext, ReactNode, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from "react";
 import { IAromaAndRatio } from "../Models/AromaAndRatio.models";
 
 export interface ISelectedAromasContext {
   selectedAromas: IAromaAndRatio[];
+  setSelectedAromas: Dispatch<SetStateAction<IAromaAndRatio[]>>;
   addAroma: (product: IAromaAndRatio) => void;
   removeAroma: (productId: IAromaAndRatio["id"]) => void;
   isInSelectedAromas: (aromaId: IAromaAndRatio["id"]) => boolean;
+  MAX_SELECTED_AROMAS: number;
 }
 
 export const SelectedAromasContext = createContext<ISelectedAromasContext>({
   selectedAromas: [],
+  setSelectedAromas: () => null,
   addAroma: () => null,
   removeAroma: () => null,
   isInSelectedAromas: () => false,
+  MAX_SELECTED_AROMAS: 3,
 });
 
 const SelectedAromasProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [selectedAromas, setSelectedAromas] = useState<IAromaAndRatio[]>([]);
-
+  const MAX_SELECTED_AROMAS = 3;
   const isInSelectedAromas = (aromaId: IAromaAndRatio["id"]) =>
     !!selectedAromas.find((p) => p.id === aromaId);
 
@@ -34,7 +44,14 @@ const SelectedAromasProvider: React.FC<{ children: ReactNode }> = ({
 
   return (
     <SelectedAromasContext.Provider
-      value={{ selectedAromas, addAroma, removeAroma, isInSelectedAromas }}
+      value={{
+        selectedAromas,
+        setSelectedAromas,
+        addAroma,
+        removeAroma,
+        isInSelectedAromas,
+        MAX_SELECTED_AROMAS,
+      }}
     >
       {children}
     </SelectedAromasContext.Provider>

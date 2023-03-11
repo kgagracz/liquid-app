@@ -3,11 +3,22 @@ import { SelectedAromasContext } from "../../../../Context/SelectedAromas.contex
 import Aroma from "../Aroma";
 import "./SelectedAromasList.modules.scss";
 import { useContext } from "react";
+import { drawItemsFromArray } from "../../../../utils/drawItemsFromArray";
+import { IAromaAndRatio } from "../../../../Models/AromaAndRatio.models";
 
-interface ISelectedAromasListProps {}
+interface ISelectedAromasListProps {
+  aromas: IAromaAndRatio[];
+}
 
-const SelectedAromasList = () => {
-  const { selectedAromas } = useContext(SelectedAromasContext);
+const SelectedAromasList: React.FC<ISelectedAromasListProps> = ({ aromas }) => {
+  const { selectedAromas, setSelectedAromas, MAX_SELECTED_AROMAS } = useContext(
+    SelectedAromasContext
+  );
+
+  const handleDrawClick = () =>
+    setSelectedAromas(
+      drawItemsFromArray(MAX_SELECTED_AROMAS - selectedAromas.length, aromas)
+    );
 
   return (
     <div className="selected-aromas">
@@ -20,7 +31,7 @@ const SelectedAromasList = () => {
           />
         ))}
       </div>
-      <Button text="Wylosuj aromat" onClick={() => console.log("losuj")} />
+      <Button text="Wylosuj aromaty" onClick={handleDrawClick} />
     </div>
   );
 };

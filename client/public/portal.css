@@ -1,0 +1,7 @@
+#root-portal {
+  position: absolute;
+  z-index: 10;
+  margin: auto;
+  top: 0;
+  width: 100vw;
+}

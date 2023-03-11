@@ -8,6 +8,7 @@ const Sidebar: React.FC = () => (
     <div className="logo">
       <h1>Liquid App</h1>
     </div>
+    {/* todo <nav> i klasy z __ */}
     <ul className="nav">
       {routes.map((route) => (
         <li className="nav-item" key={route.name}>

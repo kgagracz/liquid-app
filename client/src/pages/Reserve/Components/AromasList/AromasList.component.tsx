@@ -1,23 +1,19 @@
-import { ChangeEvent, useEffect, useState, useContext } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import { SelectedAromasContext } from "../../../../Context/SelectedAromas.context";
 import { IAromaAndRatio } from "../../../../Models/AromaAndRatio.models";
-import { fetchAromas } from "../../Services/AromasList.service";
 import "./AromasList.modules.scss";
 import AromaListItem from "./Component/AromaListItem";
+import { ReactComponent as CloseIcon } from "../../../../Icons/close.svg";
 
-const AromasList = () => {
-  const [aromas, setAromas] = useState<IAromaAndRatio[]>([]);
-  const [filteredAromas, setFilteredAromas] = useState<IAromaAndRatio[]>([]);
+interface IAromasListProps {
+  aromas: IAromaAndRatio[];
+}
+
+const AromasList: React.FC<IAromasListProps> = ({ aromas }) => {
+  const [filteredAromas, setFilteredAromas] =
+    useState<IAromaAndRatio[]>(aromas);
   const { selectedAromas, addAroma, removeAroma, isInSelectedAromas } =
     useContext(SelectedAromasContext);
-
-  useEffect(() => {
-    (async () => {
-      const aromas = await fetchAromas();
-      setAromas(aromas);
-      setFilteredAromas(aromas);
-    })();
-  }, []);
 
   const filter = (e: ChangeEvent<HTMLInputElement>) =>
     setFilteredAromas(
@@ -28,27 +24,40 @@ const AromasList = () => {
       )
     );
 
+  const handleAromaClick = (aroma: IAromaAndRatio) => {
+    !isInSelectedAromas(aroma.id) ? addAroma(aroma) : removeAroma(aroma.id);
+  };
+
   return (
     <div className="aromas-list">
       <div className="aromas-list__head">
-        <input type="text" placeholder="Szukaj..." onChange={filter} />
-        <p>
+        <input
+          className="aromas-list__head__search-input"
+          type="text"
+          placeholder="Szukaj..."
+          onChange={filter}
+        />
+        <p className="aromas-list__head__selected">
           Wybrane:
           {selectedAromas.map((aroma, i) => (
             <span onClick={() => removeAroma(aroma.id)}>
-              {i + 1} {aroma.attributes.flavour} X
+              {i + 1}. {aroma.attributes.flavour} <CloseIcon />
             </span>
           ))}
         </p>
       </div>
       <div className="aromas-list__aromas">
-        {filteredAromas.map((aroma) => (
-          <AromaListItem
-            aroma={aroma}
-            addAroma={addAroma}
-            isSelected={isInSelectedAromas(aroma.id)}
-          />
-        ))}
+        {filteredAromas.length ? (
+          filteredAromas.map((aroma) => (
+            <AromaListItem
+              aroma={aroma}
+              handleAromaClick={handleAromaClick}
+              isSelected={isInSelectedAromas(aroma.id)}
+            />
+          ))
+        ) : (
+          <p>Brak wyników</p>
+        )}
       </div>
     </div>
   );
