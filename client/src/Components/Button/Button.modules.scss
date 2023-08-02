@@ -16,4 +16,9 @@
     border: 2px solid $primaryBorder;
     color: $text;
   }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
 }

@@ -14,6 +14,11 @@ export interface ISelectedAromasContext {
   removeAroma: (productId: IAromaAndRatio["id"]) => void;
   isInSelectedAromas: (aromaId: IAromaAndRatio["id"]) => boolean;
   MAX_SELECTED_AROMAS: number;
+  updateAroma: (
+    aromaId: IAromaAndRatio["id"],
+    property: string,
+    value: IAromaAndRatio[keyof IAromaAndRatio]
+  ) => void;
 }
 
 export const SelectedAromasContext = createContext<ISelectedAromasContext>({
@@ -23,7 +28,10 @@ export const SelectedAromasContext = createContext<ISelectedAromasContext>({
   removeAroma: () => null,
   isInSelectedAromas: () => false,
   MAX_SELECTED_AROMAS: 3,
+  updateAroma: () => null,
 });
+
+class IAromaAndRatioAttributes {}
 
 const SelectedAromasProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -42,6 +50,25 @@ const SelectedAromasProvider: React.FC<{ children: ReactNode }> = ({
   const removeAroma = (aromaId: IAromaAndRatio["id"]) =>
     setSelectedAromas((prev) => prev.filter((aroma) => aroma.id !== aromaId));
 
+  const updateAroma = (
+    aromaId: IAromaAndRatio["id"],
+    property: string,
+    value: IAromaAndRatio[keyof IAromaAndRatio]
+  ) => {
+    //todo unknown
+    const aromaToUpdate = selectedAromas.find((a) => a.id === aromaId);
+    if (!aromaToUpdate) {
+      return;
+    }
+    // @ts-ignore TODO - ts-ignore
+    aromaToUpdate[property as keyof IAromaAndRatio] = value;
+    setSelectedAromas((prev) =>
+      prev.map((aroma) =>
+        aroma.id === aromaToUpdate.id ? aromaToUpdate : aroma
+      )
+    );
+  };
+
   return (
     <SelectedAromasContext.Provider
       value={{
@@ -51,6 +78,7 @@ const SelectedAromasProvider: React.FC<{ children: ReactNode }> = ({
         removeAroma,
         isInSelectedAromas,
         MAX_SELECTED_AROMAS,
+        updateAroma,
       }}
     >
       {children}

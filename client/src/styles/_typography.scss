@@ -1,42 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap');
-@import './variables';
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&display=swap");
+@import "./variables";
 
 html {
-    font-family: 'Baloo Tammudu 2', cursive;
+  font-family: "Baloo Tammudu 2", cursive;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
-    color: $text;
+  text-decoration: none;
+  color: $text;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 h2 {
-    color: $text;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 24px;
+  color: $text;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 24px;
 }
 
 hr {
-    border-top: 1px solid $separator;
+  border-top: 1px solid $separator;
 }
 
 .strikethrough {
-    text-decoration: line-through;
-    text-decoration-thickness: 1px;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+p,
+label {
+  line-height: 100%;
 }
