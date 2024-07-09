@@ -1,4 +1,4 @@
-# liquid-app
+# [WIP] liquid-app
 
 ## description
 Application created using React and Strapi. The main goal is to provide easy vape liquids ordering. 
